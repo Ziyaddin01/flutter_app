@@ -12,11 +12,7 @@ class MyApp extends StatelessWidget {
         centerTitle: true,
         ),
         body: Center (
-          child: Text('MyFlutter App', style: TextStyle(
-              fontSize: 20,
-              color: Colors.red,
-              fontFamily: 'GoblinOne'
-          ),)
+          child:  Icon(Icons.amp_stories_outlined, size: 45, color: Colors.amber,),
         ),
           floatingActionButton: FloatingActionButton(
           child: Text('Нажми'),onPressed: () {
