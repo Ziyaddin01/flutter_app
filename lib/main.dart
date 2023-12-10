@@ -12,7 +12,14 @@ class MyApp extends StatelessWidget {
         centerTitle: true,
         ),
         body: Center (
-          child:  Icon(Icons.amp_stories_outlined, size: 45, color: Colors.amber,),
+          child: OutlinedButton.icon(
+              onPressed: () {},
+              icon: Icon(Icons.adb_sharp),
+              label: Text('Settings')
+          )
+          // ElevatedButton(onPressed: () {},child: Text('Нажми'), style: TextButton.styleFrom(backgroundColor: Colors.blueGrey),),
+          // TextButton(onPressed: () {}, child: Text('Нажми на меня'), style: TextButton.styleFrom(backgroundColor: Colors.blueGrey),
+          // Icon(Icons.amp_stories_outlined, size: 45, color: Colors.amber,),
         ),
           floatingActionButton: FloatingActionButton(
           child: Text('Нажми'),onPressed: () {
