@@ -1,41 +1,52 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MaterialApp(
+  home: UserPanel(),
+));
 
-class MyApp extends StatelessWidget {
+class UserPanel extends StatelessWidget {
+  const UserPanel({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(primaryColor: Colors.deepOrangeAccent),
-      home: Scaffold(
-        appBar: AppBar(title: Text('MyFlutter App'),
+    return Scaffold(
+      backgroundColor: Colors.lightBlue,
+      appBar: AppBar(
+        title: Text('MyFlutter User'),
         centerTitle: true,
-        ),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        backgroundColor: Colors.black45,
+      ),
+      body: SafeArea(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text('Hello'),
-                TextButton(onPressed: () {}, child: Text('Hello'))
+                Padding(padding: EdgeInsets.only(top: 30),),
+                Text("John Huseynov", style: TextStyle(
+                  fontSize: 25,
+                  color: Colors.white,
+                ),),
+                Padding(padding: EdgeInsets.only(top: 10),),
+                CircleAvatar(
+                  backgroundImage: AssetImage('assets/mountain.jpeg'),
+                  radius: 50,
+                ),
+                Padding(padding: EdgeInsets.only(top: 10),),
+                Row(
+                  children: [
+                    Icon(Icons.mail_outline, size: 25),
+                    Padding(padding: EdgeInsets.only(left: 10),),
+                    Text('admin@myflutter.com', style: TextStyle(color: Colors.white),)
+                  ],
+                )
               ],
-            ),
-            Column(
-              children: [
-                Text('Hello'),
-                TextButton(onPressed: () {}, child: Text('Hello'))
-        ],
             )
-        ],
+          ],
         ),
-          floatingActionButton: FloatingActionButton(
-          child: Text('Нажми'),onPressed: () {
-            print('Click');
-          },
-            backgroundColor: Colors.deepOrangeAccent,
-          ),
       ),
     );
   }
 }
+
+
