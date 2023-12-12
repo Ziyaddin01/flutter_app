@@ -4,8 +4,16 @@ void main() => runApp(MaterialApp(
   home: UserPanel(),
 ));
 
-class UserPanel extends StatelessWidget {
+class UserPanel extends StatefulWidget {
   const UserPanel({super.key});
+
+  @override
+  State<UserPanel> createState() => _UserPanelState();
+}
+
+class _UserPanelState extends State<UserPanel> {
+
+  int _count = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -39,11 +47,22 @@ class UserPanel extends StatelessWidget {
                     Padding(padding: EdgeInsets.only(left: 10),),
                     Text('admin@myflutter.com', style: TextStyle(color: Colors.white),)
                   ],
-                )
+                ),
+                Padding(padding: EdgeInsets.only(left: 10),),
+                Text('Count: $_count', style: TextStyle(color: Colors.white),)
               ],
             )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.ac_unit_rounded),
+        backgroundColor: Colors.amber,
+        onPressed: () {
+          setState(() {
+            _count++;
+          });
+        },
       ),
     );
   }
